@@ -1,0 +1,21 @@
+x-common-config:
+  &common-config
+  network_mode: host
+  # network_mode: bridge
+  ipc: host
+  # pid: host
+  volumes:
+    - ./shm-only.xml:/shm-only.xml
+  environment:
+    - FASTRTPS_DEFAULT_PROFILES_FILE=/shm-only.xml
+
+services:
+  talker:
+    build: .
+    <<: *common-config
+    command: ros2 run demo_nodes_cpp talker
+
+  listener:
+    build: .
+    <<: *common-config
+    command: ros2 run demo_nodes_cpp listener
