@@ -4,16 +4,10 @@
         <transport_descriptor>
             <transport_id>shm_transport</transport_id>
             <type>SHM</type>
-            <!-- <healthy_check_timeout_ms>10000</healthy_check_timeout_ms> -->
-            <!-- <rtps_dump_file>/rtps-dump-file.txt</rtps_dump_file> -->
         </transport_descriptor>
     </transport_descriptors>
-    <!-- <library_settings>
-        <intraprocess_delivery>OFF</intraprocess_delivery>
-    </library_settings> -->
     <participant profile_name="SHMParticipant" is_default_profile="true">
         <rtps>
-            <!-- <prefix>77.73.71.85.69.76.95.66.65.82.82.79</prefix> -->
             <userTransports>
                 <transport_id>shm_transport</transport_id>
             </userTransports>
