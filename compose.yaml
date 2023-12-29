@@ -2,12 +2,13 @@ x-common-config:
   &common-config
   network_mode: host
   ipc: host
-  user: dominik
+  # user: dominik
   volumes:
     - ./shm-only.xml:/shm-only.xml
     # - ./rtps-dump-file.txt:/rtps-dump-file.txt
   environment:
     - FASTRTPS_DEFAULT_PROFILES_FILE=/shm-only.xml
+    - USER
 
 services:
   talker:
